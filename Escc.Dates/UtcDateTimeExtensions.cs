@@ -27,7 +27,7 @@ namespace Escc.Dates
         /// <param name="date">Date and time to convert</param>
         /// <returns>ISO 8601 UTC date and time string. <example>2006-04-01T15:30:00Z</example></returns>
         /// <remarks>Suitable for hCalendar microformat.</remarks>
-        public static string Iso8601DateTime(DateTime date)
+        public static string ToIso8601DateTime(this DateTime date)
         {
             return date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture);
         }

@@ -158,7 +158,7 @@ namespace Escc.Dates
         /// <summary>
         /// Get a string in the format 1 Jan, 10am. Use only for short-term data about the current year, never for anything which will be seen later on.
         /// </summary>
-        public static string ToShortBritishDateNoYearWithTime(DateTime date)
+        public static string ToShortBritishDateNoYearWithTime(this DateTime date)
         {
             return (new StringBuilder(date.ToShortBritishDateNoYear()).Append(", ").Append(date.ToBritishTime()).ToString());
         }
@@ -168,7 +168,7 @@ namespace Escc.Dates
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
-        public static string ToBritishMonthAndYear(DateTime date)
+        public static string ToBritishMonthAndYear(this DateTime date)
         {
             return date.ToString("MMMM yyyy", UkCulture);
         }
@@ -232,7 +232,7 @@ namespace Escc.Dates
         /// <param name="showStartTime">if set to <c>true</c> show start time.</param>
         /// <param name="showEndTime">if set to <c>true</c> show end time.</param>
         /// <returns>A text string which includes HTML entities</returns>
-        public static string ToBritishDateRangeFromThisDateUntil(DateTime startDate, DateTime endDate, bool showStartTime, bool showEndTime)
+        public static string ToBritishDateRangeFromThisDateUntil(this DateTime startDate, DateTime endDate, bool showStartTime, bool showEndTime)
         {
             return ToBritishDateRangeFromThisDateUntil(startDate, endDate, showStartTime, showEndTime, false);
         }
@@ -248,7 +248,7 @@ namespace Escc.Dates
         /// <returns>
         /// A text string which includes HTML entities
         /// </returns>
-        public static string ToBritishDateRangeFromThisDateUntil(DateTime startDate, DateTime endDate, bool showStartTime, bool showEndTime, bool useShortDateText)
+        public static string ToBritishDateRangeFromThisDateUntil(this DateTime startDate, DateTime endDate, bool showStartTime, bool showEndTime, bool useShortDateText)
         {
             bool multiDay = (startDate.DayOfYear != endDate.DayOfYear || startDate.Year != endDate.Year);
             bool showTime = (showStartTime || showEndTime);
