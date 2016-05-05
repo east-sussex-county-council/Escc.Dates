@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="BritishDateTimeExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtcDateTimeExtensionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Escc.Dates\Escc.Dates.csproj">

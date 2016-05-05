@@ -18,7 +18,9 @@ namespace Escc.Dates
         /// <returns></returns>
         public static string ToIso8601Date(this DateTime date)
         {
-            return date.ToUniversalTime().ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+            // Do not adjust to UTC because that's liable to change the date due to daylight saving or different time zones, 
+            // but we're throwing away the timezone information that allows it to be converted back again
+            return date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
         }
 
         /// <summary>
