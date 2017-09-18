@@ -35,6 +35,9 @@ When complying with standards it's often necessary to use a standard internation
 	// RFC 822, useful for RSS feeds: returns Mon, 15 Aug 05 15:52:01 +0000 
 	var rfc822Date = new DateTime(2005, 8, 5, 15, 52, 01).ToRfc822DateTime();
 
+	// RFC 850, useful for the unavailable_after value of the robots meta tag: returns Monday, 15-Aug-05 15:52:01 UTC 
+	var rfc850Date = new DateTime(2005, 08, 15, 15, 52, 01, DateTimeKind.Utc).ToRfc850DateTime();
+
 	// UNIX timestamp: returns 1143905400
 	var timestamp = new DateTime(2006, 4, 1, 15, 30, 00).ToUnixTimestamp();
 

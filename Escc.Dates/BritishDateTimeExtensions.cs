@@ -57,7 +57,7 @@ namespace Escc.Dates
                 case 12:
                     return "December";
                 default:
-                    return "";
+                    return String.Empty;
             }
         }
 
@@ -108,11 +108,29 @@ namespace Escc.Dates
         }
 
         /// <summary>
+        /// Get a string in the format 1 January 2004 from a DateTime object, or an empty string. This method should be used only when the preferred style (including the day) is too long.
+        /// </summary>
+        public static string ToBritishDate(this DateTime? date)
+        {
+            if (date.HasValue) return date.ToBritishDate();
+            return String.Empty;
+        }
+
+        /// <summary>
         /// Get a string in the format 1 Jan 2004 from a DateTime object. This method should be used only when the preferred full style (including the day) is too long.
         /// </summary>
         public static string ToShortBritishDate(this DateTime date)
         {
             return (new StringBuilder(date.Date.Day.ToString(UkCulture)).Append(" ").Append(date.Date.Month.ToShortBritishMonthName()).Append(" ").Append(date.Date.Year.ToString()).ToString());
+        }
+
+        /// <summary>
+        /// Get a string in the format 1 Jan 2004 from a DateTime object, or an empty string. This method should be used only when the preferred full style (including the day) is too long.
+        /// </summary>
+        public static string ToShortBritishDate(this DateTime? date)
+        {
+            if (date.HasValue) return date.ToShortBritishDate();
+            return String.Empty;
         }
 
         /// <summary>
@@ -124,11 +142,29 @@ namespace Escc.Dates
         }
 
         /// <summary>
+        /// Get a string in the format 1 Jan 2004 from a DateTime object, or an empty string. Use only for short-term data about the current year, never for anything which will be seen later on, and then only when the preferred full style (including the day) is too long.
+        /// </summary>
+        public static string ToShortBritishDateNoYear(this DateTime? date)
+        {
+            if (date.HasValue) return date.ToShortBritishDateNoYear();
+            return String.Empty;
+        }
+
+        /// <summary>
         /// Get a string in the format Monday 1 January 2004 from a DateTime object
         /// </summary>
         public static string ToBritishDateWithDay(this DateTime date)
         {
             return (new StringBuilder(date.Date.DayOfWeek.ToString()).Append(" ").Append(date.Date.Day.ToString()).Append(" ").Append(date.Date.Month.ToBritishMonthName()).Append(" ").Append(date.Date.Year.ToString()).ToString());
+        }
+
+        /// <summary>
+        /// Get a string in the format Monday 1 January 2004 from a DateTime object, or an empty string
+        /// </summary>
+        public static string ToBritishDateWithDay(this DateTime? date)
+        {
+            if (date.HasValue) return date.ToBritishDateWithDay();
+            return String.Empty;
         }
 
         /// <summary>
@@ -140,11 +176,29 @@ namespace Escc.Dates
         }
 
         /// <summary>
+        /// Get a string in the format 1 January 2004, 10am from a DateTime object, or an empty string. This method should be used only when the preferred style (including the day) is too long.
+        /// </summary>
+        public static string ToBritishDateWithTime(this DateTime? date)
+        {
+            if (date.HasValue) return date.ToBritishDateWithTime();
+            return String.Empty;
+        }
+
+        /// <summary>
         /// Get a string in the format Monday 1 January 2004, 10am from a DateTime object
         /// </summary>
         public static string ToBritishDateWithDayAndTime(this DateTime date)
         {
             return (new StringBuilder(date.ToBritishDateWithDay()).Append(", ").Append(date.ToBritishTime()).ToString());
+        }
+
+        /// <summary>
+        /// Get a string in the format Monday 1 January 2004, 10am from a DateTime object, or an empty string
+        /// </summary>
+        public static string ToBritishDateWithDayAndTime(this DateTime? date)
+        {
+            if (date.HasValue) return date.ToBritishDateWithDayAndTime();
+            return String.Empty;
         }
 
         /// <summary>
@@ -156,11 +210,29 @@ namespace Escc.Dates
         }
 
         /// <summary>
+        /// Get a string in the format 1 Jan 2004, 10am from a DateTime object, or an empty string
+        /// </summary>
+        public static string ToShortBritishDateWithTime(this DateTime? date)
+        {
+            if (date.HasValue) return date.ToShortBritishDateWithTime();
+            return String.Empty;
+        }
+
+        /// <summary>
         /// Get a string in the format 1 Jan, 10am. Use only for short-term data about the current year, never for anything which will be seen later on.
         /// </summary>
         public static string ToShortBritishDateNoYearWithTime(this DateTime date)
         {
             return (new StringBuilder(date.ToShortBritishDateNoYear()).Append(", ").Append(date.ToBritishTime()).ToString());
+        }
+
+        /// <summary>
+        /// Get a string in the format 1 Jan, 10am, or an empty string. Use only for short-term data about the current year, never for anything which will be seen later on.
+        /// </summary>
+        public static string ToShortBritishDateNoYearWithTime(this DateTime? date)
+        {
+            if (date.HasValue) return date.ToShortBritishDateNoYearWithTime();
+            return String.Empty;
         }
 
         /// <summary>
@@ -171,6 +243,17 @@ namespace Escc.Dates
         public static string ToBritishMonthAndYear(this DateTime date)
         {
             return date.ToString("MMMM yyyy", UkCulture);
+        }
+
+        /// <summary>
+        /// Get a string in the format January 2004 from a DateTime object
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public static string ToBritishMonthAndYear(this DateTime? date)
+        {
+            if (date.HasValue) return date.ToBritishMonthAndYear();
+            return String.Empty;
         }
 
         /// <summary>
@@ -212,6 +295,16 @@ namespace Escc.Dates
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Get a string in the format 10am or 10.15am, or an empty string, from a DateTime object
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public static string ToBritishTime(this DateTime? time)
+        {
+            if (time.HasValue) return time.ToBritishTime();
+            return String.Empty;
+        }
 
         /// <summary>
         /// Gets the house-style description of a period from one date and time to another

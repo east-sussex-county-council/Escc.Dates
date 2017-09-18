@@ -34,5 +34,16 @@ namespace Escc.Dates.Tests
 
             Assert.AreEqual("2016-05-29T23:00:00Z", isoDate);
         }
+
+        [Test]
+        public void Rfc850DateTimeConvertsOK()
+        {
+            var date = new DateTime(2005, 08, 15, 15, 52, 01, DateTimeKind.Utc);
+            var expected = "Monday, 15-Aug-05 15:52:01 UTC";
+
+            var result = date.ToRfc850DateTime();
+            
+            Assert.AreEqual(expected, result);
+        }
     }
 }
