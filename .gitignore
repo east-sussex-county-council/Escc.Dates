@@ -32,3 +32,4 @@ _ReSharper*/
 [Ss]cripts*/
 packages/
 .vs
+*.xml

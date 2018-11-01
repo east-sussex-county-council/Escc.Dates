@@ -112,7 +112,7 @@ namespace Escc.Dates
         /// </summary>
         public static string ToBritishDate(this DateTime? date)
         {
-            if (date.HasValue) return date.ToBritishDate();
+            if (date.HasValue) return date.Value.ToBritishDate();
             return String.Empty;
         }
 
@@ -129,7 +129,7 @@ namespace Escc.Dates
         /// </summary>
         public static string ToShortBritishDate(this DateTime? date)
         {
-            if (date.HasValue) return date.ToShortBritishDate();
+            if (date.HasValue) return date.Value.ToShortBritishDate();
             return String.Empty;
         }
 
@@ -146,7 +146,7 @@ namespace Escc.Dates
         /// </summary>
         public static string ToShortBritishDateNoYear(this DateTime? date)
         {
-            if (date.HasValue) return date.ToShortBritishDateNoYear();
+            if (date.HasValue) return date.Value.ToShortBritishDateNoYear();
             return String.Empty;
         }
 
@@ -163,7 +163,7 @@ namespace Escc.Dates
         /// </summary>
         public static string ToBritishDateWithDay(this DateTime? date)
         {
-            if (date.HasValue) return date.ToBritishDateWithDay();
+            if (date.HasValue) return date.Value.ToBritishDateWithDay();
             return String.Empty;
         }
 
@@ -180,7 +180,7 @@ namespace Escc.Dates
         /// </summary>
         public static string ToBritishDateWithTime(this DateTime? date)
         {
-            if (date.HasValue) return date.ToBritishDateWithTime();
+            if (date.HasValue) return date.Value.ToBritishDateWithTime();
             return String.Empty;
         }
 
@@ -197,7 +197,7 @@ namespace Escc.Dates
         /// </summary>
         public static string ToBritishDateWithDayAndTime(this DateTime? date)
         {
-            if (date.HasValue) return date.ToBritishDateWithDayAndTime();
+            if (date.HasValue) return date.Value.ToBritishDateWithDayAndTime();
             return String.Empty;
         }
 
@@ -214,7 +214,7 @@ namespace Escc.Dates
         /// </summary>
         public static string ToShortBritishDateWithTime(this DateTime? date)
         {
-            if (date.HasValue) return date.ToShortBritishDateWithTime();
+            if (date.HasValue) return date.Value.ToShortBritishDateWithTime();
             return String.Empty;
         }
 
@@ -231,7 +231,7 @@ namespace Escc.Dates
         /// </summary>
         public static string ToShortBritishDateNoYearWithTime(this DateTime? date)
         {
-            if (date.HasValue) return date.ToShortBritishDateNoYearWithTime();
+            if (date.HasValue) return date.Value.ToShortBritishDateNoYearWithTime();
             return String.Empty;
         }
 
@@ -252,7 +252,7 @@ namespace Escc.Dates
         /// <returns></returns>
         public static string ToBritishMonthAndYear(this DateTime? date)
         {
-            if (date.HasValue) return date.ToBritishMonthAndYear();
+            if (date.HasValue) return date.Value.ToBritishMonthAndYear();
             return String.Empty;
         }
 
@@ -302,7 +302,7 @@ namespace Escc.Dates
         /// <returns></returns>
         public static string ToBritishTime(this DateTime? time)
         {
-            if (time.HasValue) return time.ToBritishTime();
+            if (time.HasValue) return time.Value.ToBritishTime();
             return String.Empty;
         }
 
